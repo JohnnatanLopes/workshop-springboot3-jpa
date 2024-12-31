@@ -1,5 +1,6 @@
 package com.educanadoweb.course.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import org.aspectj.weaver.ast.Or;
 
@@ -16,6 +17,7 @@ public class Payment implements Serializable{
     private Long id;
     private Instant moment;
 
+    @JsonIgnore
     @OneToOne
     @MapsId
     private Order order;
